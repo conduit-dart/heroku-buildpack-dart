@@ -134,6 +134,11 @@ else
   build_pubspec $PUBSPEC_PATH
 fi
 
+for package in $DART_GLOBAL_PACKAGES
+do
+  PACKAGE_ELEMENTS=(${package//@/ })
+  pub global activate "${PACKAGE_ELEMENTS[0]}" "${PACKAGE_ELEMENTS[1]}"
+done
 
 # I think heroku deletes all the contents of /app and replaces it with
 # whatever is in $BUILD_DIR, so copy over the pub-cache. Why not put it in
