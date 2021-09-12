@@ -136,6 +136,7 @@ fi
 
 for package in $DART_GLOBAL_PACKAGES
 do
+  message "Activating ${PACKAGE_ELEMENTS[0]} ${PACKAGE_ELEMENTS[1]}"
   PACKAGE_ELEMENTS=(${package//@/ })
   pub global activate "${PACKAGE_ELEMENTS[0]}" "${PACKAGE_ELEMENTS[1]}"
 done
