@@ -6,7 +6,12 @@ set -e
 #set -x
 unset GIT_DIR
 
-CONDUIT_VERSION="3.0.11"
+
+if [ -z $CONDUIT_VERSION ]; then 
+  CONDUIT_VERSION="3.0.11"
+else
+  echo "CONDUIT_VERSION is set to '$CONDUIT_VERSION'";
+fi
 
 function message {
   echo "$1"
