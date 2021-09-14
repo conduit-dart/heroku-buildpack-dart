@@ -6,6 +6,8 @@ set -e
 #set -x
 unset GIT_DIR
 
+CONDUIT_VERSION="3.0.11"
+
 function message {
   echo "$1"
   sync
@@ -133,6 +135,9 @@ else
   message "PUBSPEC_PATH is set to $PUBSPEC_PATH"
   build_pubspec $PUBSPEC_PATH
 fi
+
+# Install conduit
+pub global activate "conduit" "$CONDUIT_VERSION"
 
 for package in $DART_GLOBAL_PACKAGES
 do
