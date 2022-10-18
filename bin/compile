@@ -142,7 +142,7 @@ else
 fi
 
 # Install conduit
-pub global activate "conduit" "$CONDUIT_VERSION"
+dart pub global activate "conduit" "$CONDUIT_VERSION"
 
 for package in $DART_GLOBAL_PACKAGES
 do
