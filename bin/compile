@@ -47,10 +47,10 @@ build_pubspec() {
   export PATH=$PATH:$DART_PATH:$PUB_CACHE_BIN
   message "*** Running pub get"
 
-  pub --version
+  dart pub --version
 
   #start pub from the /app folder to have correct symlink paths
-  pub get  
+  dart pub get  
   
   dart pub global activate webdev
   if [ -d "web" ]
@@ -148,7 +148,7 @@ for package in $DART_GLOBAL_PACKAGES
 do
   message "Activating ${PACKAGE_ELEMENTS[0]} ${PACKAGE_ELEMENTS[1]}"
   PACKAGE_ELEMENTS=(${package//@/ })
-  pub global activate "${PACKAGE_ELEMENTS[0]}" "${PACKAGE_ELEMENTS[1]}"
+  dart pub global activate "${PACKAGE_ELEMENTS[0]}" "${PACKAGE_ELEMENTS[1]}"
 done
 
 # I think heroku deletes all the contents of /app and replaces it with
